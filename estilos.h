@@ -1,6 +1,8 @@
 #ifndef ESTILOS_H
 #define ESTILOS_H
 
+#include <stdio.h>
+
 // Definição de cores
 #define RESET_COLOR "\x1b[0m"
 #define BLACK "\x1b[30m"
@@ -19,6 +21,9 @@
 #define REVERSE "\x1b[7m"
 
 // Função para imprimir texto com estilo
-void printStyledText(const char *text, const char *color, const char *font);
+void printStyledText(const char *text, const char *color, const char *font){
+
+      printf("%s%s%s%s\n", color, font, text, RESET_COLOR RESET_FONT);
+}
 
 #endif 

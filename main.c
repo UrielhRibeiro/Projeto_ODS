@@ -3,6 +3,7 @@
 #include <locale.h>
 //Inclusão de bibliotecas personalizadas
 
+#include "estilos.h"
 
 // Código main (função principal)
 int main(){
@@ -13,7 +14,7 @@ int main(){
     do{
     
     printf("\n\n***** PROGAMA DE PESQUISA DUDH *****\n\n");
-
+    printStyledText("c", BLUE, BOLD);
     printf("[1] - Responder pesquisa\n");
     printf("[2] - Listas dados dos respondentes\n");
     printf("[3] - Listar dados individuais\n");
