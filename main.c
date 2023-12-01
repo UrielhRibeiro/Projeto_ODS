@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <locale.h>
 //Inclusão de bibliotecas personalizadas
-
 #include "estilos.h"
+#include "util.h"
 
 // Código main (função principal)
 int main(){
