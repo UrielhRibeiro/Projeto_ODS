@@ -1,6 +1,8 @@
 //Inclusão das bibliotecas
 #include <stdio.h>
 #include <locale.h>
+//Inclusão de bibliotecas personalizadas
+
 
 // Código main (função principal)
 int main(){
@@ -9,9 +11,9 @@ int main(){
 
 // Iniciando o menu do programa
     do{
-
-    printf("\n\n***** PROGAMA DE PESQUISA DUDH *****\n\n");
     
+    printf("\n\n***** PROGAMA DE PESQUISA DUDH *****\n\n");
+
     printf("[1] - Responder pesquisa\n");
     printf("[2] - Listas dados dos respondentes\n");
     printf("[3] - Listar dados individuais\n");
