@@ -1,3 +1,4 @@
+//Arquivo de funções utilitárias (funções genéricas)
 #ifndef UTIL_H
 #define UTIL_H
 
@@ -7,7 +8,7 @@
 #include <unistd.h>
 #endif
 
-// Função que limpa a tela em sistemas windows e linux
+//Função que limpa a tela em sistemas windows e linux
 void limparTela() {
 #ifdef _WIN32
     system("cls");
@@ -16,7 +17,7 @@ void limparTela() {
 #endif
 }
 
-// Função que pausa a tela em sistemas windows e linux
+//Função que pausa a tela em sistemas windows e linux
 void pausar() {
 #ifdef _WIN32
     system("pause");
@@ -24,11 +25,6 @@ void pausar() {
     printf("Pressione Enter para continuar...");
     while (getchar() != '\n');
 #endif
-}
-
-// Função que imprime um separador
-void imprimirSeparador() {
-    printf("========================================\n");
 }
 
 // Função que gera um delay em uma certa quantidade de tempo

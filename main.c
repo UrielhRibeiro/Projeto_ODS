@@ -1,56 +1,74 @@
+//Declaração das bibliotecas
 #include <stdio.h>
 #include <locale.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 #include "estilos.h"
 #include "util.h"
+#include "pesquisa.h"
 
+//Inicio da função principal do programa
 int main() {
-    setlocale(LC_ALL, "Portuguese");
+    //Definição da linguagem do código - Português
+    UINT CPAGE_UTF8 = 65001;
+    UINT CPAGE_DEFAULT = GetConsoleOutputCP();
+    SetConsoleOutputCP(CPAGE_UTF8);
 
     int opcao;
 
+    //Inicio do menu
     do {
-        printf("\n\n***** PROGRAMA DE PESQUISA DUDH *****\n\n");
-        printf("[1] - Responder pesquisa\n");
-        printf("[2] - Listar dados dos respondentes\n");
-        printf("[3] - Listar dados individuais\n");
-        printf("[4] - Listar estatísticas\n");
-        printf("[5] - Fim do programa\n");
+        printStyledText("\n\n***** PROGRAMA DE PESQUISA DUDH *****\n\n",WHITE,BOLD);
+        printStyledText("[1] - Responder pesquisa\n",GREEN,BOLD);
+        printStyledText("[2] - Listar dados dos respondentes\n",YELLOW,BOLD);
+        printStyledText("[3] - Listar dados individuais\n",BLUE,BOLD);
+        printStyledText("[4] - Listar estatísticas\n",MAGENTA,BOLD);
+        printStyledText("[5] - Fim do programa\n",RED,BOLD);
         printf("\nInforme qual opção deseja escolher: ");
 
-        // Verificando se a entrada é um número
         if (scanf("%d", &opcao) != 1) {
-            printStyledText("\nErro: Por favor, digite um número válido.\n",RED,BOLD);
+            printStyledText("\nErro: Por favor, digite um número válido.\n", RED, BOLD);
             pausar();
             limparTela();
-            // Limpa o buffer de entrada para evitar loops infinitos em caso de entrada inválida
             while (getchar() != '\n');
             continue;
         }
 
-        // Chamada das funções do programa
         switch (opcao) {
-            case 1:
-               
+            case 1: // Cadastrar participante
+                limparTela();
+                {
+                    Participante novoParticipante;
+                    cadastrarParticipante(&novoParticipante);
+                    salvarDados(&novoParticipante);
+                }
                 break;
 
-            case 2:
-                
-
-            case 3:
-               
+            case 2: // Listar participantes
+                limparTela();
+                listarParticipantes();
                 break;
 
-            case 4:
-              
+            case 3: // Pesquisa participante 
+                limparTela();
+                {
+                    char nomePesquisa[100];
+                    printf("Digite o nome da pessoa para pesquisa: ");
+                    scanf("%s", nomePesquisa);
+                    pesquisarParticipante(nomePesquisa);
+                }
                 break;
 
-            case 5:
-                printf("\nFim do programa. Até mais!\n");
+            case 4:// Listar participante
+                limparTela();
+                listarEstatisticas();
+                break;
+
+            case 5: // Fim do programa
+                printStyledText("\nFim do programa. Até mais!\n",YELLOW,BOLD);
                 break;
 
             default:
-                printStyledText("\nErro: Opção inválida. Por favor, escolha uma opção válida.\n",RED,BOLD);
+                printStyledText("\nErro: Opção inválida. Por favor, escolha uma opção válida.\n", RED, BOLD);
                 pausar();
                 limparTela();
                 break;

@@ -1,3 +1,4 @@
+//Arquivo para definir estilos (fonte e cor do texto do programa)
 #ifndef ESTILOS_H
 #define ESTILOS_H
 
