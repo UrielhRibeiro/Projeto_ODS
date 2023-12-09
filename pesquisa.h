@@ -171,7 +171,7 @@ void listarEstatisticas() {
     int totalMenores18 = 0, totalMaiores18 = 0;
 
     for (int i = 0; i < numParticipantes; i++) {
-        // Adapte conforme suas violações
+   
         if (participantes[i].violacaoV1 == 'S') {
             totalViolacaoV1++;
         }
@@ -185,7 +185,7 @@ void listarEstatisticas() {
             totalViolacaoV4++;
         }
 
-        // Adapte conforme seus gêneros
+      
         if (participantes[i].genero == 'M') {
             totalGeneroM++;
         } else if (participantes[i].genero == 'F') {
@@ -194,7 +194,6 @@ void listarEstatisticas() {
             totalGeneroO++;
         }
 
-        // Adapte conforme suas faixas etárias
         if (participantes[i].idade < 18) {
             totalMenores18++;
         } else {
